@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <title>Building Blocks</title>
+</head>
+<body>
+
+    <section class="custom-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="tab-menu">
+                        <ul>
+                            <li onclick="change('b1')">B1: The Builder's Philosophy</li>
+                            <li onclick="change('b2')">B2: The Idea</li>
+                            <li onclick="change('b3')">B3: Creatives</li>
+                            <li onclick="change('b4')">B4: Creatives</li>
+                            <li onclick="change('b5')">B5: Product Development</li>
+                        </ul>
+
+                        <div class="vertical-tab">
+                            <div class="bullet active" id="b1"></div>
+                            <div class="bullet" id="b2"></div>
+                            <div class="bullet" id="b3"></div>
+                            <div class="bullet" id="b4"></div>
+                            <div class="bullet" id="b5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="tab-menu-details" id="b1-details">
+                       <h2>B1: The Builder's Philosophy</h2>
+                       <p>
+                            In this block, I introduce myself and give you the background to begin developing your ideas. From "Finding Your Why" to your 
+                            "Survival Guide", Block 1 covers the basic prerequisites to beginning your brand, where I share my personal
+                            experiences and how I chose to maintain my mindset to this day. My goal is to teach you how to become a leader and guide 
+                            your brand to success.
+                       </p> 
+                    </div>
+
+                    <div class="tab-menu-details active2" id="b2-details">
+                        <h2>B2: The Idea</h2>
+                        <p>
+                            Block 2 goes straight into coming up with your idea. I go over the various strategies and techniques that my 
+                            competitors and I have used to fully develop ideas through market research and consumer surveys. The idea is the 
+                            starting block to creating your product and I teach you how to not only come up with a successful idea, 
+                            but also how to validate your ideas.
+                        </p> 
+                     </div>
+
+                     <div class="tab-menu-details active2" id="b3-details">
+                        <h2>B3: Branding</h2>
+                        <p>
+                            These videos go over the importance of branding and how to set up a successful brand. It's not always easy to choose 
+                            a name or to create a set of core values. Block 3 will guide you through step by step on how to find your brand and 
+                            how you will be able to begin building your brand's image for the future.
+                        </p> 
+                     </div>
+
+                     <div class="tab-menu-details active2" id="b4-details">
+                        <h2>B4: Creatives</h2>
+                        <p>
+                            In Block 4, I highlight the importance of creativity within your brand. Not only do you have to use your imagination, 
+                            but your potential customers can be an influence to the image that you are trying to create as well. In these videos, 
+                            I teach you how to maximize your conversion rates through creativity and well thought out content.
+                        </p> 
+                     </div>
+
+                     <div class="tab-menu-details active2" id="b5-details">
+                        <h2>B5: Product Development</h2>
+                        <p>
+                            Developing a prototype is exciting yet challenging. These videos will teach you how to design and begin planning to 
+                            test your products through prototypes and MVPs. I will also cover how packaging design can be the key to success for 
+                            your products and how to create the best packaging based on your brand persona.
+                        </p> 
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function active(a, b, c, d, a1, b1, c1, d1)
+        {
+            // bullet color
+            a.classList.remove("active");
+            b.classList.remove("active");
+            c.classList.remove("active");
+            d.classList.remove("active");
+
+            // paragraph change
+            a1.classList.add("active2");
+            b1.classList.add("active2");
+            c1.classList.add("active2");
+            d1.classList.add("active2");
+        }
+
+        function change(b)
+        {
+            var b1 = document.getElementById("b1");
+            var b2 = document.getElementById("b2");
+            var b3 = document.getElementById("b3");
+            var b4 = document.getElementById("b4");
+            var b5 = document.getElementById("b5");
+
+            var p1 = document.getElementById("b1-details");
+            var p2 = document.getElementById("b2-details");
+            var p3 = document.getElementById("b3-details");
+            var p4 = document.getElementById("b4-details");
+            var p5 = document.getElementById("b5-details");
+            if( b === "b1")
+            {        
+                b1.classList.add("active");
+                p1.classList.remove("active2");
+                active(b2, b3, b4, b5, p2, p3, p4, p5);
+            }
+            else if( b === "b2" )
+            {
+                b2.classList.add("active");
+                p2.classList.remove("active2")
+                active(b1, b3, b4, b5, p1, p3, p4, p5);
+            }
+            else if( b === "b3" )
+            {   
+                b3.classList.add("active");
+                p3.classList.remove("active2");
+                active(b1, b2, b4, b5, p1, p2, p4, p5);
+            }
+            else if( b === "b4" )
+            {   
+                b4.classList.add("active");
+                p4.classList.remove("active2")
+                active(b1, b2, b3, b5, p1, p2, p3, p5);
+            }
+            else if( b === "b5" )
+            {   
+                b5.classList.add("active");
+                p5.classList.remove("active2");
+                active(b1, b2, b3, b4, p1, p2, p3, p4);
+            }
+        }
+    </script>
+
+</body>
+</html>
